@@ -1,105 +1,84 @@
-# FocusHabitTracker 🚀  
-*A clean, motivational habit-tracking app built with SwiftUI, SwiftData, and MVVM.*
+# FocusHabitTracker
 
-![Platform](https://img.shields.io/badge/platform-iOS-blue)
-![Swift](https://img.shields.io/badge/swift-5.9-orange)
-![Architecture](https://img.shields.io/badge/architecture-MVVM-green)
+A habit-tracking iOS app built for CSE 335 – Principles of Mobile Computing at Arizona State University. Track daily routines, attach locations to habits, and stay motivated with a fresh quote every day.
 
 ---
 
-## 📌 Overview
-**FocusHabitTracker** is a productivity app developed for **CSE 335 – Principles of Mobile Computing**.  
-The app helps users build consistent habits through customizable schedules, location-enhanced tasks, and a motivational “Quote of the Day” fetched from a live Web API.
+## Features
 
-This project showcases:
-- SwiftUI UI development  
-- MVVM architecture  
-- SwiftData local persistence  
-- Web API integration (JSON decoding)  
-- CoreLocation + MapKit usage  
-- Multi-screen navigation and forms  
+**Habit management** — Create habits with flexible schedules (daily, weekly, monthly, or weekday), optional date ranges, priority flags, and attached GPS locations. Edit or delete habits anytime, and mark them complete as you go.
+
+**Location-aware tasks** — Pin any habit to a real-world place using an interactive MapPicker. Coordinates are stored alongside the habit for future location-based extensions.
+
+**Quote of the Day** — Pulls a fresh motivational quote from the ZenQuotes API on each launch using `URLSession` and `JSONDecoder` — no third-party dependencies.
+
+**Dashboard** — At a glance: today's due vs. completed habits, daily completion percentage, per-habit totals, streaks, and a recent activity log.
 
 ---
 
-## ✨ Features
+## Architecture
 
-### 🗓 Habit Management
-- Add habits with:
-  - Daily / weekly / monthly / weekday frequency  
-  - Date-range restrictions  
-  - High-priority tagging  
-  - Optional location attachment  
-- Edit or delete habits anytime  
-- Mark habits as completed  
+Follows **MVVM**, Apple's recommended pattern for SwiftUI apps.
 
-### 📍 Location-Based Functionality
-- Select a location using an interactive **MapPicker**  
-- Attach GPS coordinates to specific habits  
-
-### 🌤 Daily Motivation (Web API)
-- Fetches a new **“Quote of the Day”** from ZenQuotes API  
-- Uses `URLSession` + `JSONDecoder` (no third-party libraries)  
-
-### 📊 Dashboard Insights
-- Today’s habits due vs completed  
-- Daily completion percentage  
-- Per-habit total completions  
-- Streak tracking  
-- Recent activity log  
-
----
-
-## 🏗 Architecture (MVVM)
-
-The app follows Apple's recommended **Model-View-ViewModel (MVVM)** architecture:
-
-```text
-VIEWS
+```
+Views/
 ├── TodayView
 ├── AddHabitView
 ├── DashboardView
 └── MapPickerView
 
-VIEWMODELS
-├── TodayViewModel (ObservableObject)
-└── LocationService (ObservableObject)
+ViewModels/
+├── TodayViewModel       (ObservableObject)
+└── LocationService      (ObservableObject)
 
-MODELS
-├── Habit (@Model)
-├── HabitLog (@Model)
-└── SwiftData ModelContainer
+Models/
+├── Habit                (@Model – SwiftData)
+├── HabitLog             (@Model – SwiftData)
+└── ModelContainer
 
-SERVICES
-└── QuoteService (Web API)
+Services/
+└── QuoteService         (ZenQuotes API)
 ```
 
 ---
 
-## 🛠 Technologies Used
+## Tech Stack
 
-- **SwiftUI**
-- **SwiftData** (local persistence)
-- **MVVM architecture**
-- **CoreLocation & MapKit**
-- **URLSession + JSONDecoder**
-- **Async/Await**
-- **NavigationStack / Sheets / Menus**
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
+| Layer | Technology |
+|---|---|
+| UI | SwiftUI |
+| Persistence | SwiftData |
+| Mapping | CoreLocation + MapKit |
+| Networking | URLSession + async/await |
+| Architecture | MVVM |
 
 ---
 
-## 👨‍💻 Author
+## Requirements
 
-**Abdullah Alghabban**  
-Computer Science, Arizona State University  
-CSE 335 – Principles of Mobile Computing
+- iOS 17+
+- Xcode 15+
+- Swift 5.9+
 
-Feel free to explore the project, provide feedback, or contribute to future improvements.
+---
 
+## Getting Started
 
+1. Clone the repo
+2. Open `FocusHabitTracker.xcodeproj` in Xcode
+3. Select a simulator or connected device running iOS 17+
+4. Build and run (`⌘R`)
 
+No API keys or external dependencies required.
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE) for details.
+
+---
+
+## Author
+
+**Abdullah Alghabban** — Computer Science, Arizona State University
