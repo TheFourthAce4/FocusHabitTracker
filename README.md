@@ -51,37 +51,27 @@ This project showcases:
 
 ## 🏗 Architecture (MVVM)
 
-The app follows Apple's recommended MVVM structure:
+The app follows Apple's recommended **Model-View-ViewModel (MVVM)** architecture:
+
+```text
 VIEWS
-│── TodayView
-│── AddHabitView
-│── DashboardView
-│── MapPickerView
-│
+├── TodayView
+├── AddHabitView
+├── DashboardView
+└── MapPickerView
+
 VIEWMODELS
-│── TodayViewModel (ObservableObject)
-│── LocationService (ObservableObject)
-│
+├── TodayViewModel (ObservableObject)
+└── LocationService (ObservableObject)
+
 MODELS
-│── Habit (@Model)
-│── HabitLog (@Model)
-│── SwiftData ModelContainer
-│
+├── Habit (@Model)
+├── HabitLog (@Model)
+└── SwiftData ModelContainer
+
 SERVICES
-│── QuoteService (Web API)
-
-
-Views are kept simple and reactive using:
-- `@StateObject`  
-- `@ObservedObject`  
-- `@Query`  
-- `@Environment(\.modelContext)`  
-
-ViewModels expose:
-- `@Published` state  
-- Habit manipulation  
-- JSON API handling  
-- Location updates  
+└── QuoteService (Web API)
+```
 
 ---
 
