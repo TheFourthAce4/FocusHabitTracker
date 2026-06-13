@@ -97,16 +97,6 @@ ViewModels expose:
 
 ---
 
-## 📸 Screenshots
-
-<img width="228" height="478" alt="home" src="https://github.com/user-attachments/assets/1d7624e8-17f5-474a-9cd1-d4b9d361b2ae" />
-
-<img width="375" height="780" alt="AddHabit" src="https://github.com/user-attachments/assets/7a5dce12-403d-4cfe-89bb-413dc832a625" />
-
-<img width="204" height="428" alt="Dashboard" src="https://github.com/user-attachments/assets/8aafcd89-bf62-4dac-9141-2560e7e68c18" />
-
-<img width="375" height="780" alt="map" src="https://github.com/user-attachments/assets/5991c707-7199-49c0-9aa1-aa037bd28048" />
-
 ## 📄 License
 
 This project is licensed under the **MIT License**.
